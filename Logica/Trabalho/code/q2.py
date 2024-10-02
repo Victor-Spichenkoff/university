@@ -1,7 +1,4 @@
-print("")
-
-
-# {var:-:^30}
+# {var:-:^30} --> formatar ele no centro de 30 e completar com "-"
 def menu():
     print(f"{"Copyright Victor Spichenkoff Santana":-^65}")
     print((f"{"Cardápio":-^65}"))
@@ -26,7 +23,7 @@ def force_correct_value(label, valids):
     res = ""
     while True:
         res = input(f"Entre com o {label} desejado ({options_string}): ").upper()
-        if not valids.__contains__(res):
+        if res not in valids:
             print(f"{label.title()} inválido. Tente novamente\n")
             continue
 
@@ -56,16 +53,30 @@ def get_price(size, flavor):
         print("Burlou a verificação. Só de castigo, vai pagar 100!!!")
 
 
+def get_pizza_label(abrev):
+    """
+    :param abrev: ou PS ou PD
+    :return: O nome pizza + o tipo
+    """
+    if abrev == "PS":
+        return "Pizza Salgada"
+    elif abrev == "PD":
+        return "Pizza Doce"
+
+
 def get_final_price():
     menu()
     final_price = 0
 
     while True:
-        tamanho = force_correct_value("tamanho", ["P", "M", "G"])
         sabor = force_correct_value("sabor", ["PS", "PD"])
-        current_value = get_price(tamanho, sabor)
+        tamanho = force_correct_value("tamanho", ["P", "M", "G"])
+        current_price = get_price(tamanho, sabor)
 
-        final_price += current_value
+        final_price += current_price
+
+        pizza_name = get_pizza_label(sabor)
+        print(f"Você pediu uma {pizza_name} no tamanho {tamanho}: R$ {current_price}\n")
 
         more = input("Deseja mais alguma coisa: (S/N): ").upper()
         if more != "S":
@@ -73,4 +84,4 @@ def get_final_price():
 
 
 final = get_final_price()
-print(f"O valor final é de: R$ {final:0.2f}")
+print(f"\nO valor total a ser pago: R$ {final:0.2f}")
