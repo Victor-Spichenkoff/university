@@ -23,20 +23,18 @@ def escolha_tipo():
 
         print("Tipo inválido. Tente novamente")
 
-    price = 0
+
     match chosen_type:
         case "PIN":
-            price = 150.40
+            return 150.40
         case "PER":
-            price = 170.20
+            return 170.20
         case "MOG":
-            price = 190.90
+            return 190.90
         case "IPE":
-            price = 210.10
+            return 210.10
         case "IMB":
-            price = 220.70
-
-    return price
+            return 220.70
 
 
 def qtd_toras():
@@ -66,7 +64,7 @@ def qtd_toras():
         percent_discount = 4/100
     elif qtd < 1000:
         percent_discount = 9/100
-    elif qtd < 2000:
+    elif qtd <= 2000:
         percent_discount = 16/100
 
     return { "qtd": qtd, "discount_percent": percent_discount }
