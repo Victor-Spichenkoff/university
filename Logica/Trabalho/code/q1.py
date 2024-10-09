@@ -1,7 +1,7 @@
 print("Copyright Victor Spichenkoff Santana")
 
 
-# valor base e age, decde porcentagem de acrescimo e aumenta o valor conforme ele
+# valor base e idade, decide porcentagem de acrescimo e aumenta o valor conforme ele
 # Retonar -1 em caso de entrada errada
 def give_increased(base, age):
     percent = 1

@@ -10,7 +10,7 @@ def menu():
 {"-" * 65}""")
 
 
-# Colcoar apenas "tamanho" ou "sabor"
+# Colocar apenas "tamanho" ou "sabor"
 def force_correct_value(label, valids):
     """
     :param label: "tamanho" ou "sabor"
@@ -66,6 +66,7 @@ def get_pizza_label(abrev):
 
 def get_final_price():
     menu()
+    # acumulador:
     final_price = 0
 
     while True:
