@@ -12,7 +12,7 @@ def escolha_tipo():
         print("""Entre com o Tipo de Madeira desejado:
         PIN - Tora de Pinho 
         PER - Tora de Peroba 
-        MOG - Tora de Mongno
+        MOG - Tora de Mogno
         IPE - Tora de Ipê 
         IMB - Tora de Imbuia """)
 
@@ -22,7 +22,6 @@ def escolha_tipo():
             break
 
         print("Tipo inválido. Tente novamente")
-
 
     match chosen_type:
         case "PIN":
@@ -39,7 +38,7 @@ def escolha_tipo():
 
 def qtd_toras():
     """
-    :return: { "qtd": NUMBER, "discount_percent": [0, 0.16] }
+    :return: { "qtd": [1, 2000], "discount_percent": [0, 0.16] }
     """
     qtd = -1
     percent_discount = 0
@@ -96,7 +95,7 @@ def give_discounted_price(original_price, qtd, discount_percent):
     passar só se jpa estiver validado
     não conta o trasporte
     :param original_price: preço pegado pelo escolha_tipo
-    :param qtd: qunatas unidades
+    :param qtd: quantas unidades
     :param discount_percent: [0, 0.99] é quanto retira do original
     :return: o preço já descontado
     """
@@ -112,4 +111,4 @@ trasp_price = transporte()
 
 total_a_pagar = give_discounted_price(wood_price, qtd_infos["qtd"], qtd_infos["discount_percent"]) + trasp_price
 
-print(f"O valor final é: {total_a_pagar}")
+print(f"O valor final é: R${total_a_pagar:0.2f}")

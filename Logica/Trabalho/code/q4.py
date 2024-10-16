@@ -4,10 +4,16 @@ lista_contatos = []
 id_global = 4767042
 original_global_id = id_global
 
-# Para testar:
+# Para criar rapidamente, descomentar:
 # id_global += 1
 # eu = {'id': id_global, 'nome': 'Victor', 'atividade': 'Piloto de F1', 'telefone': '902372307'}
+# id_global += 1
+# dev1 = {'id': id_global, 'nome': 'Victor 2', 'atividade': 'Desenvolvedor Backend', 'telefone': '902372306'}
+# id_global += 1
+# dev2 = {'id': id_global, 'nome': 'Victor 3', 'atividade': 'Desenvolvedor Frontend', 'telefone': '902372305'}
 # lista_contatos.append(eu)
+# lista_contatos.append(dev1)
+# lista_contatos.append(dev2)
 
 
 # Menus:
@@ -35,7 +41,7 @@ def main_menu():
 
 def consult_menu():
     """
-    :return: [1, 4], a opçção escolhida
+    :return: [1, 4], a opção escolhida
     """
 
     print("-" * 50)
@@ -53,11 +59,12 @@ def consult_menu():
                 return res
         except ValueError:
             print("Errado, tente novamente!")
+            continue
 
         print("Opção inválida, tente novamente!")
 
 
-# Cadastro - Só ele cuida de tudo, menos pegar o id
+# Cadastro - Ele cuida de tudo, menos pegar o id
 def cadastrar_contato(_id):
     nome = input("Por favor, entre com o NOME do contato: ")
     atividade = input("Por favor, entre com o ATIVIDADE do contato: ")
@@ -208,5 +215,3 @@ while True:
         case 4:
             print("Até mais 👋")
             break
-
-# print(lista_contatos)
