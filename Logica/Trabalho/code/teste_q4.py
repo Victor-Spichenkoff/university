@@ -1,19 +1,3 @@
-# Para criar rapidamente, descomentar:
-# lista_contatos = []
-# id_global = 4767042
-# original_global_id = id_global
-
-# id_global += 1
-# eu = {'id': id_global, 'nome': 'Victor', 'atividade': 'Piloto de F1', 'telefone': '902372307'}
-# id_global += 1
-# dev1 = {'id': id_global, 'nome': 'Victor 2', 'atividade': 'Desenvolvedor Backend', 'telefone': '902372306'}
-# id_global += 1
-# dev2 = {'id': id_global, 'nome': 'Victor 3', 'atividade': 'Desenvolvedor Frontend', 'telefone': '902372305'}
-# lista_contatos.append(eu)
-# lista_contatos.append(dev1)
-# lista_contatos.append(dev2)
-
-
 print("Copyright Victor Spichenkoff Santana\n")
 
 lista_contatos = []
@@ -22,6 +6,7 @@ original_global_id = id_global
 
 
 # Menus:
+
 def consult_menu():
     """
     :return: [1, 4], a opção escolhida
@@ -29,10 +14,10 @@ def consult_menu():
 
     print("-" * 50)
     print(f"{"MENU CONSULTAR CONTATOS":-^50}")
-    print("""Escolha a opção desejada:
-    1 - Consultar TODOS os contatos 
-    2 - Consultar contato por ID
-    3 - Consultar contato(s) por ATIVIDADE
+    print("""Escolha a opção desejada: 
+    1 - Consultar TODOS os contatos  
+    2 - Consultar contato por ID 
+    3 - Consultar contato(s) por ATIVIDADE 
     4 - Retornar """)
     while True:
         try:
@@ -46,8 +31,9 @@ def consult_menu():
 
         print("Opção inválida, tente novamente!")
 
+    # Cadastro - Ele cuida de tudo, menos pegar o id
 
-# Cadastro - Ele cuida de tudo, menos pegar o id
+
 def cadastrar_contato(_id):
     nome = input("Por favor, entre com o NOME do contato: ")
     atividade = input("Por favor, entre com o ATIVIDADE do contato: ")
@@ -81,7 +67,7 @@ def get_all():
 
 def get_by_id():
     """
-    * Se tiver, printa, senão, avisa que não exoste
+    * Se tiver, printa, senão, avisa que não existe
     :return: void
     """
     _id = 0
@@ -97,7 +83,7 @@ def get_by_id():
 
         print(f"Digite um número maior que {original_global_id}")
 
-    # pegar por id
+        # pegar por id
     print(f"\n{"-" * 28}")
     for contact in lista_contatos:
         if contact["id"] == _id:
@@ -155,8 +141,9 @@ def consultar_contatos():
             case 4:
                 return
 
+            # Remoção - Só ele cuida de tudo
 
-# Remoção - Só ele cuida de tudo
+
 def remover_contato():
     # Sair se não tive contato, evitar loop infinito. Sim, eu cai nele
     if not len(lista_contatos):
@@ -182,18 +169,19 @@ def remover_contato():
         except ValueError:
             print("ID inválido!")
 
+        # Execução
 
-# Execução
+
 while True:
     main_option = ""
 
     # Menu principal
     print("-" * 50)
     print(f"{"MENU PRINCIPAL":-^50}")
-    print("""Escolha a opção desejada:
-        1 - Cadastrar Contato   
-        2 - Consultar Contato(s)
-        3 - Remover Contato
+    print("""Escolha a opção desejada: 
+        1 - Cadastrar Contato    
+        2 - Consultar Contato(s) 
+        3 - Remover Contato 
         4 - Sair """)
     while True:
         try:
@@ -207,7 +195,7 @@ while True:
 
         print("Errado, tente novamente!")
 
-    # O que fazer
+        # O que fazer
     match main_option:
         case 1:
             id_global += 1
@@ -219,19 +207,3 @@ while True:
         case 4:
             print("Até mais 👋")
             break
-
-
-# while True:
-#     main_option = main_menu()
-#
-#     match main_option:
-#         case 1:
-#             id_global += 1
-#             cadastrar_contato(id_global)
-#         case 2:
-#             consultar_contatos()
-#         case 3:
-#             remover_contato()
-#         case 4:
-#             print("Até mais 👋")
-#             break

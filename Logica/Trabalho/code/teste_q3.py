@@ -9,11 +9,11 @@ def escolha_tipo():
     chosen_type = ""
 
     while True:
-        print("""Entre com o Tipo de Madeira desejado:
-        PIN - Tora de Pinho 
-        PER - Tora de Peroba 
-        MOG - Tora de Mogno
-        IPE - Tora de Ipê 
+        print("""Entre com o Tipo de Madeira desejado: 
+        PIN - Tora de Pinho  
+        PER - Tora de Peroba  
+        MOG - Tora de Mogno 
+        IPE - Tora de Ipê  
         IMB - Tora de Imbuia """)
 
         res = input(">>> ").upper()
@@ -60,20 +60,20 @@ def qtd_toras():
     if qtd < 100:
         percent_discount = 0
     elif qtd < 500:
-        percent_discount = 4/100
+        percent_discount = 4 / 100
     elif qtd < 1000:
-        percent_discount = 9/100
+        percent_discount = 9 / 100
     elif qtd <= 2000:
-        percent_discount = 16/100
+        percent_discount = 16 / 100
 
-    return { "qtd": qtd, "discount_percent": percent_discount }
+    return {"qtd": qtd, "discount_percent": percent_discount}
 
 
 def transporte():
-    print("""Escolha o tipo o tipo de Trasnporte
-    1 - Trasporte Rodoviário - R$ 1000.00
-    2 - Trasporte Ferroviário  - R$ 2000.00
-    3 - Trasporte Hidroviário  - R$ 2500.00
+    print("""Escolha o tipo o tipo de Trasnporte 
+    1 - Trasporte Rodoviário - R$ 1000.00 
+    2 - Trasporte Ferroviário  - R$ 2000.00 
+    3 - Trasporte Hidroviário  - R$ 2500.00 
     """)
 
     while True:
@@ -88,8 +88,9 @@ def transporte():
 
         print("Trasporte inválido. Tente novamente")
 
+    # Trasformações
 
-# Trasformações
+
 def give_discounted_price(original_price, qtd, discount_percent):
     """
     passar só se já estiver validado
@@ -107,7 +108,6 @@ def give_discounted_price(original_price, qtd, discount_percent):
 wood_price = escolha_tipo()
 qtd_infos = qtd_toras()
 trasp_price = transporte()
-
 
 total_a_pagar = give_discounted_price(wood_price, qtd_infos["qtd"], qtd_infos["discount_percent"]) + trasp_price
 
