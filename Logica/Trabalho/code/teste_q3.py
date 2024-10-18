@@ -2,6 +2,7 @@ print("Copyright Victor Spichenkoff Santana")
 
 
 # Area de pegar os valores
+
 def escolha_tipo():
     """
     :return: o valor para o tipo x de madeira
@@ -88,9 +89,8 @@ def transporte():
 
         print("Trasporte inválido. Tente novamente")
 
-    # Trasformações
 
-
+# Trasformações
 def give_discounted_price(original_price, qtd, discount_percent):
     """
     passar só se já estiver validado

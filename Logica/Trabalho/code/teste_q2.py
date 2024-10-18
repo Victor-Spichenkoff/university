@@ -1,11 +1,11 @@
 def menu():
     print(f"{"Copyright Victor Spichenkoff Santana":-^65}")
     print((f"{"Cardápio":-^65}"))
-    print(f"""{"-" * 65} 
----| Tamanho  |   Pizza Salgada (PS)   |   Pizza  Doce(PD)   |--- 
----|    P     |        R$ 30.00        |       R$ 34.00      |--- 
----|    M     |        R$ 45.00        |       R$ 48.00      |--- 
----|    G     |        R$ 60.00        |       R$ 66.00      |--- 
+    print(f"""{"-" * 65}  
+---| Tamanho  |   Pizza Salgada (PS)   |   Pizza  Doce(PD)   |---  
+---|    P     |        R$ 30.00        |       R$ 34.00      |---  
+---|    M     |        R$ 45.00        |       R$ 48.00      |---  
+---|    G     |        R$ 60.00        |       R$ 66.00      |---  
 {"-" * 65}""")
 
 
@@ -53,7 +53,7 @@ def get_price(size, flavor):
         print("Burlou a verificação. Só de castigo, vai pagar 100!!!")
         return 100
 
-    # Converte a abreviação para um texto.
+        # Converte a abreviação para um texto.
 
 
 def get_pizza_label(abrev):
@@ -69,12 +69,15 @@ def get_pizza_label(abrev):
 
 def get_final_price():
     menu()
+
     # acumulador:
     final_price = 0
 
     while True:
+        # Inputs:
         sabor = force_correct_value("sabor", ["PS", "PD"])
         tamanho = force_correct_value("tamanho", ["P", "M", "G"])
+        # Pegar o preço:
         current_price = get_price(tamanho, sabor)
 
         final_price += current_price

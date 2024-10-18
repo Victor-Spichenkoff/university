@@ -206,4 +206,3 @@ while True:
             remover_contato()
         case 4:
             print("Até mais 👋")
-            break
