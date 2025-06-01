@@ -1,0 +1,7 @@
+No trabalho pede para fazer 2 funcionalidades. Eu pensei em fazer a tela de login com um botão para entrar, que levaria para a segunda tela: home;
+Na home, eu coloco como no aplicativo Amazon Prime Video, com um botão para sair, que leva para a tela de login e algumas areas de rolagem vertical e horizontal. Essas seriam as duas funcionalidade, os inputs no login seriam apenas ilustrativos e os videos na home também não levariam a tela de assistir. Isso atenderia a todos os requisitos do trabalho e de interatividade?
+
+
+No trabalho, é pedido para fazer duas funcionalidades. Eu pensei em fazer a tela de login com um botão para entrar, que levaria para a segunda tela: a home.
+Na home, eu colocaria algo semelhante ao aplicativo Amazon Prime Video, com um botão para sair (que leva de volta para a tela de login) e algumas áreas de rolagem vertical e horizontal. Essas seriam as duas funcionalidades. Os inputs no login seriam apenas ilustrativos, e os vídeos na home também não levariam para uma tela de reprodução.
+Isso atenderia a todos os requisitos do trabalho e de interatividade?

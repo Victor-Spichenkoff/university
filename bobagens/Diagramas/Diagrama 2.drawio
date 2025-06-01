@@ -1,0 +1,85 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36" version="25.0.3">
+  <diagram name="Página-1" id="rEZ1FVFYifwEF5ytXNTo">
+    <mxGraphModel dx="792" dy="413" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="omLc49HRkrAwDD3eYAz0-10" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="omLc49HRkrAwDD3eYAz0-1" target="omLc49HRkrAwDD3eYAz0-8" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="omLc49HRkrAwDD3eYAz0-1" value="Inicio&amp;nbsp;&lt;div&gt;Implementação&lt;br&gt;&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="58" y="128" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="omLc49HRkrAwDD3eYAz0-5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="omLc49HRkrAwDD3eYAz0-2" target="omLc49HRkrAwDD3eYAz0-4" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="omLc49HRkrAwDD3eYAz0-2" value="Criar design&lt;div&gt;10 dias&lt;/div&gt;" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="442" y="138" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="omLc49HRkrAwDD3eYAz0-7" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="omLc49HRkrAwDD3eYAz0-4" target="omLc49HRkrAwDD3eYAz0-6" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="omLc49HRkrAwDD3eYAz0-4" value="Planejar&lt;div&gt;banco de dados&lt;/div&gt;&lt;div&gt;10 dias&lt;/div&gt;" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="642" y="138" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="omLc49HRkrAwDD3eYAz0-13" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="omLc49HRkrAwDD3eYAz0-6" target="omLc49HRkrAwDD3eYAz0-12" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="omLc49HRkrAwDD3eYAz0-6" value="Planejar&amp;nbsp;&lt;div&gt;end points&lt;/div&gt;&lt;div&gt;10 dias&lt;/div&gt;" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="642" y="258" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="omLc49HRkrAwDD3eYAz0-11" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="omLc49HRkrAwDD3eYAz0-8" target="omLc49HRkrAwDD3eYAz0-2" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="omLc49HRkrAwDD3eYAz0-8" value="Escolher Frameworks e Ferramentas&lt;div&gt;10 dias&lt;/div&gt;" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="242" y="138" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="WrP7q4COyijs7pcD4Svw-2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="omLc49HRkrAwDD3eYAz0-12" target="WrP7q4COyijs7pcD4Svw-1" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="omLc49HRkrAwDD3eYAz0-12" value="Escrever trabalho II&lt;div&gt;15 dias&lt;/div&gt;" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="445" y="258" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="omLc49HRkrAwDD3eYAz0-14" value="Fim&amp;nbsp;&lt;div&gt;Implementação&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="653" y="470" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="WrP7q4COyijs7pcD4Svw-4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="WrP7q4COyijs7pcD4Svw-1" target="WrP7q4COyijs7pcD4Svw-3" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="WrP7q4COyijs7pcD4Svw-1" value="Implementar&amp;nbsp;&lt;div&gt;Backend&lt;/div&gt;&lt;div&gt;10 dias&lt;/div&gt;" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="261" y="258" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="WrP7q4COyijs7pcD4Svw-6" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="WrP7q4COyijs7pcD4Svw-3" target="WrP7q4COyijs7pcD4Svw-5" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="WrP7q4COyijs7pcD4Svw-3" value="Implementar&amp;nbsp;&lt;div&gt;Banco de Dados&lt;/div&gt;&lt;div&gt;5 dias&lt;/div&gt;" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="62" y="258" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="WrP7q4COyijs7pcD4Svw-8" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="WrP7q4COyijs7pcD4Svw-5" target="WrP7q4COyijs7pcD4Svw-7" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="WrP7q4COyijs7pcD4Svw-5" value="Implementar&amp;nbsp;&lt;div&gt;Frontend&lt;br&gt;&lt;div&gt;15 dias&lt;/div&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="62" y="357" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="WrP7q4COyijs7pcD4Svw-10" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="WrP7q4COyijs7pcD4Svw-7" target="WrP7q4COyijs7pcD4Svw-9" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="WrP7q4COyijs7pcD4Svw-7" value="Realizar testes&lt;div&gt;3 dias&lt;/div&gt;" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="261" y="357" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="WrP7q4COyijs7pcD4Svw-13" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="WrP7q4COyijs7pcD4Svw-9" target="WrP7q4COyijs7pcD4Svw-12" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="WrP7q4COyijs7pcD4Svw-9" value="Fazer&amp;nbsp;&lt;div&gt;Deploy&lt;/div&gt;&lt;div&gt;20 dias&lt;/div&gt;" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="464" y="357" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="WrP7q4COyijs7pcD4Svw-14" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="WrP7q4COyijs7pcD4Svw-12" target="omLc49HRkrAwDD3eYAz0-14" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="WrP7q4COyijs7pcD4Svw-12" value="Preencher Atividade Extensionista III&lt;div&gt;15 dias&lt;/div&gt;" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="653" y="357" width="120" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
