@@ -1,6 +1,6 @@
 import pygame.image
 
-from code.Cont import WIN_WIDTH, COLOR_YELLOW, COLOR_ORANGE, MENU_OPTIONS, COLOR_WHITE
+from code.Const import WIN_WIDTH, COLOR_YELLOW, COLOR_ORANGE, MENU_OPTIONS, COLOR_WHITE
 from code.helpers import check_events
 
 
