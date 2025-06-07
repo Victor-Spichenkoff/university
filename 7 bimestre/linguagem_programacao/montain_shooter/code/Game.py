@@ -16,7 +16,7 @@ class Game:
             game_mode = menu.run()
 
             if game_mode in [MENU_OPTIONS[0], MENU_OPTIONS[1], MENU_OPTIONS[2]]:
-                level = Level(self.window, "Level 1", game_mode)
+                level = Level(self.window, "Level1", game_mode)
                 level_return = level.run()
             elif game_mode == MENU_OPTIONS[3]:
                 pass

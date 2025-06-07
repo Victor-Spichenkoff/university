@@ -1,22 +1,16 @@
-import random
-
-import pygame.image
-
-from code.Const import WIN_WIDTH, ENTITY_SPEED
+from code.Const import ENTITY_SPEED, WIN_WIDTH
 from code.Entity import Entity
 
 
-class Background(Entity):
-    """
-    - name deve ser com base nos assets
-    """
+class Enemy(Entity):
     def __init__(self, name, position: tuple):
         super().__init__(name, position)
 
-
-
+    def update(self, dt):
+        pass
 
     def move(self):
         self.rect.centerx -= ENTITY_SPEED[self.name]
         if self.rect.right <= 0:
             self.rect.left = WIN_WIDTH
+
