@@ -3,9 +3,11 @@ import random
 import pygame
 
 from code.Const import WIN_HEIGHT, COLOR_WHITE, MENU_OPTIONS, EVENT_ENEMY, SPAW_TIME
+from code.Enemy import Enemy
 from code.Entity import Entity
 from code.EntityFactory import EntityFactory
 from code.EntityMediator import EntityMediator
+from code.Player import Player
 from code.helpers import check_events
 
 
@@ -23,7 +25,6 @@ class Level:
 
         pygame.time.set_timer(EVENT_ENEMY, SPAW_TIME)
 
-
     def run(self):
         pygame.mixer_music.load(f'./assets/{self.name}.mp3')
         pygame.mixer_music.set_volume(0.3)
@@ -31,19 +32,24 @@ class Level:
         # pygame.mixer_music.play(-1)
         clock = pygame.time.Clock()  # manter taxa de atualização constante
         while True:
-            clock.tick(60) # FPS
+            clock.tick(60)  # FPS
 
             # EVENT
             for ent in self.entity_list:
                 self.window.blit(source=ent.surf, dest=ent.rect)
                 ent.move()
+                # if isinstance(ent, Player):
+                if isinstance(ent, (Player, Enemy)):
+                    shoot = ent.shoot()
+                    if shoot is not None:
+                        self.entity_list.append(shoot)
 
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:  # fechou, executo mesmo
                     pygame.quit()
                     quit()  # acabar com o pygame (init)
                 if event.type == EVENT_ENEMY:
-                    choice = random.choice(("Enemy1","Enemy1", "Enemy2"))
+                    choice = random.choice(("Enemy1", "Enemy1", "Enemy2"))
                     self.entity_list.append(EntityFactory.get_entity(choice))
 
             self.level_text(14, f'{self.name} - Timeout: {self.timeout / 1000:.1f}s', COLOR_WHITE, (10, 5))
