@@ -16,8 +16,15 @@ class Game:
             game_mode = menu.run()
 
             if game_mode in [MENU_OPTIONS[0], MENU_OPTIONS[1], MENU_OPTIONS[2]]:
-                level = Level(self.window, "Level1", game_mode)
-                level_return = level.run()
+                player_score = [0, 0]
+
+
+                level = Level(self.window, "Level1", game_mode, player_score)
+                level_return = level.run(player_score)
+                if level_return:
+                    level = Level(self.window, "Level2", game_mode, player_score)
+                    level_return = level.run(player_score)
+
             elif game_mode == MENU_OPTIONS[3]:
                 pass
             elif game_mode == MENU_OPTIONS[4]:
