@@ -93,7 +93,7 @@ class Score:
     # def show(self):
     #     pygame.mixer_music.load("./assets/Score.mp3")
     #     # TODO: DESCOMENTAR PARA MÚSICA
-    #     pygame.mixer_music.play(-1)  # toca; -1 -> infinito
+        pygame.mixer_music.play(-1)  # toca; -1 -> infinito
     #
     #     self.score_text(48, 'TOP 10 SCORE', COLOR_YELLOW, SCORE_POS['Title'])
     #     self.score_text(20, 'NAME     SCORE           DATE      ', COLOR_YELLOW, SCORE_POS['Label'])

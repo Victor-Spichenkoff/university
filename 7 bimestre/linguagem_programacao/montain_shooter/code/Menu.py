@@ -14,7 +14,7 @@ class Menu:
         menu_option = 0
         pygame.mixer_music.load("./assets/Menu.mp3")
         # TODO: DESCOMENTAR PARA MÚSICA
-        # pygame.mixer_music.play(-1)  # toca; -1 -> infinito
+        pygame.mixer_music.play(-1)  # toca; -1 -> infinito
 
         while True:
             # desenhar. (origem, destino)

@@ -39,7 +39,7 @@ class Level:
         pygame.mixer_music.load(f'./assets/{self.name}.mp3')
         pygame.mixer_music.set_volume(0.3)
         # TODO: DECOMMENT
-        # pygame.mixer_music.play(-1)
+        pygame.mixer_music.play(-1)
         clock = pygame.time.Clock()  # manter taxa de atualização constante
         while True:
             clock.tick(60)  # FPS
