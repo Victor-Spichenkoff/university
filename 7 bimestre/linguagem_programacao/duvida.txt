@@ -1,0 +1,44 @@
+Olá, bom dia!
+
+Estou planejando desenvolver um jogo de corrida simples, onde o objetivo é desviar de carros que aparecem na tela e tentar ir o mais longe possível. Gostaria de confirmar se o nível de simplificação que estou considerando é aceitável para esta etapa do trabalho, já que entendi que basta ser uma demo jogável.
+
+Minha ideia inicial é a seguinte:
+
+- O jogo já inicia direto na tela de corrida;
+- Quando o jogador colide com outro carro, aparece uma tela informando a pontuação final;
+- Para jogar novamente, seria necessário fechar e abrir o programa manualmente.
+
+Gostaria de saber se esse nível de funcionalidade já atende aos requisitos mínimos da demo.
+
+Caso seja necessário adicionar mais recursos, pensei nas seguintes possibilidades:
+- Permitir reiniciar o jogo sem precisar fechar a aplicação;
+- Iniciar o jogo apenas após o jogador apertar uma tecla;
+- Adicionar uma escalada de dificuldade conforme o tempo avança.
+
+Se necessário, qual(is) eu devo adicionar ao meu projeto?
+
+Agradeço desde já!
+
+Atenciosamente,
+Victor Spichenkoff Santana
+
+
+Olá! Bom Dia!
+
+Pretendo fazer um jogo de corrida simples. O objetivo é desviar de carros que surjam na tela e tentar ir o mais longe possível. Minha dúvida é sobre quão simplificado posso fazer, considerando ser uma demo.
+
+Por hora, pretendo fazer isso:
+
+- O jogo abre direto na tela de corrida
+- Se bater, mostro uma tela de quantos pontos o player fez
+- Se quiser reiniciar, precisa fechar e abrir de novo
+
+Isso se encaixa com a ideia de ser só uma demo?
+
+
+Caso precise de mais coisas, esses seriam os próximos passos que eu pensei:
+- Permitir recomeçar sem fechar
+- Esperar o player apertar uma tecla para iniciar
+- Escalada de dificuldade com o tempo
+
+Se necessário, qual(is) eu devo adicionar ao meu projeto?
