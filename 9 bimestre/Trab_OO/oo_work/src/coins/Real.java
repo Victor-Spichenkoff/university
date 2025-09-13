@@ -9,6 +9,6 @@ public class Real extends Coin {
 
     @Override
     public double convertToReal() {
-        return value;
+        return getValue();
     }
 }

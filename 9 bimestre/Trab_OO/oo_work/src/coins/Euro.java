@@ -9,6 +9,6 @@ public class Euro extends Coin {
 
     @Override
     public double convertToReal() {
-        return value * 6.28;
+        return getValue() * 6.28;
     }
 }

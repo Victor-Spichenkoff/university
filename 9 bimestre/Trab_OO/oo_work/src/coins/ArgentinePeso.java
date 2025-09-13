@@ -9,6 +9,6 @@ public class ArgentinePeso extends Coin {
 
     @Override
     public double convertToReal() {
-        return value * 0.0037;
+        return getValue() * 0.0037;
     }
 }

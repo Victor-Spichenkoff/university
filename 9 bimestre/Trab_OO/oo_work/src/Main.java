@@ -50,7 +50,6 @@ public class Main {
                 case 2:
                     piggyBank.list();
                     break;
-
                 case 3:
                     piggyBank.totalInReal();
                     break;

@@ -2,14 +2,13 @@ package coins;
 
 import utils.C;
 
-import java.util.Objects;
 
 public abstract class Coin {
-    protected double value;
+    private double value;
     public String typeName;
-
+    
     Coin(double value) {
-        this.value = value;
+        setValue(value);
     }
     
     public void info() {
@@ -17,4 +16,16 @@ public abstract class Coin {
     }
 
     public abstract double convertToReal();
+
+    // GETTERS SETTERS
+    public double getValue() {
+        return value;
+    }
+
+    public void setValue(double value) {
+        if(value < 0)
+            this.value = 0;
+        else
+            this.value = value;
+    }
 }

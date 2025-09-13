@@ -9,6 +9,6 @@ public class Dollar extends Coin {
 
     @Override
     public double convertToReal() {
-        return value * 5.35;
+        return getValue() * 5.35;
     }
 }
