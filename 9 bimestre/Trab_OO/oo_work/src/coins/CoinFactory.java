@@ -1,15 +1,14 @@
 package coins;
 
 public class CoinFactory {
-    public static Coin Create(CoinType type, double value) {
+    public static Coin create(CoinType type, double value) {
 
         return switch (type){
             case Real -> new Real(value);
             case Dollar -> new Dollar(value);
-//            case Euro -> new Dollar(value);
+            case Euro -> new Euro(value);
             case ArgentinePeso -> new ArgentinePeso(value);
-//            case Rublo -> new Dollar(value);
-            default -> new Real(value);
+            case Rublo -> new Rublo(value);
         };
     }
 }
