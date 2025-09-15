@@ -5,7 +5,7 @@ import utils.C;
 import java.util.ArrayList;
 
 public class PiggyBank {
-    private final ArrayList<Coin> coinsList = new ArrayList<Coin>();
+    private ArrayList<Coin> coinsList = new ArrayList<Coin>();
 
     public void add(Coin c) {
         coinsList.add(c);
@@ -13,6 +13,7 @@ public class PiggyBank {
 
     public void list() {
         C.log("\nLISTA DE MOEDAS");
+        C.log("ID| NOME  | VALOR");
         if(coinsList.isEmpty()) {
             C.log("VAZIA\n\n");
             return;
@@ -24,14 +25,24 @@ public class PiggyBank {
         C.log("\n\n");
     }
 
-    public void remove(Coin c) {
-        coinsList.remove(c);
+    public void removeById(int id) {
+        var coinToRemove = coinsList.stream()
+                .filter(c -> c.getId() == id)
+                .findFirst();
+
+        if (coinToRemove.isPresent()) {
+            coinsList.remove(coinToRemove.get());
+            C.logInLine("\nRemovido: ");
+            coinToRemove.get().info();
+        } else {
+            C.log("NÂO EXISTE!");
+        }
     }
 
     public void totalInReal() {
         double total = 0;
         for(var c:coinsList) {
-            total += c.convertToReal();
+             total += c.convertToReal();
         }
         System.out.printf("O total em real é: R$ %.2f", total);
     }

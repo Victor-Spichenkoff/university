@@ -1,18 +1,21 @@
 package coins;
 
 import utils.C;
+import utils.IdManager;
 
 
 public abstract class Coin {
     private double value;
     public String typeName;
+    private int id;
     
     Coin(double value) {
+        setId(IdManager.getNewId());
         setValue(value);
     }
     
     public void info() {
-        C.log(typeName + " - " + value);
+        C.log(id + " | " + typeName + " - " + value);
     }
 
     public abstract double convertToReal();
@@ -27,5 +30,13 @@ public abstract class Coin {
             this.value = 0;
         else
             this.value = value;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }
