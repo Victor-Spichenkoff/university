@@ -5,7 +5,7 @@ import utils.C;
 import java.util.ArrayList;
 
 public class PiggyBank {
-    private ArrayList<Coin> coinsList = new ArrayList<Coin>();
+    private final ArrayList<Coin> coinsList = new ArrayList<Coin>();
 
     public void add(Coin c) {
         coinsList.add(c);
@@ -46,5 +46,4 @@ public class PiggyBank {
         }
         System.out.printf("O total em real é: R$ %.2f", total);
     }
-
 }
