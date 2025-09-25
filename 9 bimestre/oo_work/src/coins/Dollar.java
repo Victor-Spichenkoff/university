@@ -3,7 +3,7 @@ package coins;
 public class Dollar extends Coin {
     public Dollar(double value) {
         super(value);
-        this.typeName = "Dólar";
+        this.typeName = "Dolar";
     }
 
 

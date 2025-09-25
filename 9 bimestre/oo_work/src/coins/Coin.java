@@ -13,13 +13,16 @@ public abstract class Coin {
         setId(IdManager.getNewId());
         setValue(value);
     }
-    
+
+
     public void info() {
         C.log(id + " | " + typeName + " - " + value);
     }
 
+
     // to override
     public abstract double convertToReal();
+
 
     // GETTERS SETTERS
     public double getValue() {

@@ -14,11 +14,13 @@ public class PiggyBank {
 
     public void listCoins() {
         C.log("\nLISTA DE MOEDAS");
-        C.log("ID| NOME  | VALOR");
         if(coinsList.isEmpty()) {
-            C.log("VAZIA\n\n");
+            C.log("\nVAZIA\n");
             return;
         }
+
+        C.log("ID| NOME  | VALOR");
+
         for(var c : coinsList) {
             c.info();
         }
@@ -36,7 +38,7 @@ public class PiggyBank {
             C.logInLine("\nRemovido: ");
             coinToRemove.get().info();
         } else {
-            C.log("NÂO EXISTE!");
+            C.log("NAO EXISTE!");
         }
     }
 
@@ -45,6 +47,6 @@ public class PiggyBank {
         for(var c:coinsList) {
              total += c.convertToReal();
         }
-        System.out.printf("O total em real é: R$ %.2f", total);
+        System.out.printf("O total em real: R$ %.2f", total);
     }
 }
