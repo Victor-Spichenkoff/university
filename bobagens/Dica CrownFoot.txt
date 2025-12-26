@@ -1,0 +1,5 @@
+Abrir o db no dbeaver
+- Clicar direito sobre tabela -> Ver diagrama
+- Botão direito em área vazia
+- Notation -> Crown Foot
+- CUIDADO: histori_question_question -> Arrumar antes de enviar (drop table no test.db)

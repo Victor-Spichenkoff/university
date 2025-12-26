@@ -27,7 +27,7 @@ public class Input {
                 String input = String(label);
                 return parser.apply(input);
             } catch (Exception e) {
-                System.out.println("Entrada inválida. Tente novamente.");
+                System.out.println("Entrada invalida. Tente novamente.");
             }
         }
     }
