@@ -1,0 +1,2 @@
+from Ajudas import * 
+clear()
