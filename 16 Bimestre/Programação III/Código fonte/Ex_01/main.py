@@ -1,7 +1,7 @@
 from Ajudas import * 
 clear()
 # TODO:
-# - getLastGreen position não está funcionando. arrumar e tornar apra o yellow também 
+# - Não está salvando o último elemento, seja com ou sem prioridade
 
 
 
@@ -11,9 +11,9 @@ from enum import Enum, auto
 ##############################################
 # AJUDAS
 ##############################################
-class Color(Enum):
-    A = auto()
-    V = auto()
+class Colors(Enum):
+    Amarelo = auto()
+    Verde = auto()
     
 
 ##############################################
@@ -46,8 +46,8 @@ def showMainMenuAndGetOption():
 ##############################################
 
 class ListItem:
-    def __init__(self, color: Color, code):
-       self.color: Color = color
+    def __init__(self, color: Colors, code):
+       self.color: Colors = color
        self.code = code
        self.next = None
        
@@ -57,8 +57,7 @@ class ListItem:
        
        
 class SimpleList:
-    head: ListItem
-    
+
     def __init__(self):
         self.head = None
         
@@ -66,30 +65,28 @@ class SimpleList:
     # Sempre no final (V)
     def inserirSemPrioridade(self, nodo: ListItem):
         if(nodo.code > 200):
-            return print("Itens sem prioridade não podem ter código maior que 200.")
-        nodo.color = Color.V
+            return print("Itens sem prioridade não podem ter código menor que 200.")
+        nodo.color = Colors.Verde
               
-        if (self.head == None):
+        if (self.head is None):
             self.head = nodo
             return
         
         current = self.head
-        next = current.next
-        while True:
+
+        while current.next is not None:
             # Sem validação especial, sempre vai ser o último
-            if (next == None):
-                current.next = nodo
-                return
-            current = next    
-            next = current.next
+            current =  current.next
+            
+        current.next = nodo
         
     
     def inserirComPrioridade(self, nodo: ListItem):
         if(nodo.code < 201):
-            return print("Itens COM prioridade não podem ter código menor que 201.")
-        nodo.color = Color.A
+            return print("Itens COM prioridade não podem ter código maior que 201.")
+        nodo.color = Colors.Amarelo
                 
-        if (self.head == None):
+        if (self.head is None):
             self.head = nodo
             return
         
@@ -97,48 +94,48 @@ class SimpleList:
         next = current.next
         
         # O primeiro já era verde, nesse caso, substituir o Head também
-        if(current.color is Color.V):
+        if(current.color is Colors.Verde):
             nodo.next = current
             self.head = nodo
             return
         
         while True:
+            # Sem verdes, mas é o último. Adiciona no final simplesmente        
+            if (next is None):
+                current.next = nodo
+                return
             # o próximo é verde. 
             # No atual (ainda A), referenciar o novo nodo.
             # No novo nodo, refereênciar o próximo, que é um V
-            if (next.color is Color.V):
+            elif (next.color is Colors.Verde):
+                current.next = nodo
                 nodo.next = next
-                current.next = nodo
                 return
-            # Sem verdes, mas é o último. Adiciona no final simplesmente        
-            elif (next == None):
-                current.next = nodo
-                return
-          
-            if(nodo.code == 201):
-                print(next.color is Color.V)
-                print(next.color)
+
             current = next    
             next = current.next
         
     
     
     # SUPORTE (apenas facilitam)
-    def getLastGreenCodeUsed(self):
-        if(self.head == None):
-            return 0
-        elif(self.head.next == None and self.head.color is Color.V):
-            return 1
-        elif(self.head.next == None):
-            return 0
-        
-        current = self.head.next
-        while True:
-            if(current.next == None and current.color is Color.V):
-                return current.code
-            elif(current.next == None):
-                return 0
-        
+    def getLastCodeUsedByColor(self, targetColor: Colors):
+        base = 0 if targetColor is Colors.Verde else 200
+
+        if self.head is None:
+            return base
+
+        if targetColor is Colors.Verde: # Verde é sempre o final, so ir até o último
+            current = self.head
+            while current.next is not None:
+                current = current.next
+            return current.code if current.color is targetColor else base
+        else: # Amarelo é sempre o início, parar no primeiro que não é amarelo
+            if self.head.color is not targetColor:
+                return base
+            current = self.head
+            while current.next is not None and current.next.color is targetColor:
+                current = current.next
+            return current.code
     
     
     def __repr__(self):
@@ -148,11 +145,9 @@ class SimpleList:
             return "None"
         
         current = self.head
-        while current.next != None:
-            final_representation += f"[{current.color.name}, {current.code}] "
+        while current != None:
+            final_representation += f"[{current.color.name[0]}, {current.code}] "
             current = current.next
-            
-            
         
         return final_representation
     
@@ -160,19 +155,25 @@ class SimpleList:
 
 lista = SimpleList()
 
-lista.inserirSemPrioridade(ListItem("A", lista.getLastGreenCodeUsed() + 1))
-lista.inserirSemPrioridade(ListItem(Color.V, lista.getLastGreenCodeUsed() + 1))
-lista.inserirSemPrioridade(ListItem(Color.V, lista.getLastGreenCodeUsed() + 1))
-lista.inserirSemPrioridade(ListItem(Color.V, lista.getLastGreenCodeUsed() + 1))
-lista.inserirSemPrioridade(ListItem(Color.V, lista.getLastGreenCodeUsed() + 1))
-lista.inserirComPrioridade(ListItem(Color.V, 201))
+
+
+
+lista.inserirComPrioridade(ListItem(Colors.Verde, 202))
+lista.inserirSemPrioridade(ListItem("A", 4))
+lista.inserirSemPrioridade(ListItem(Colors.Verde, lista.getLastCodeUsedByColor(Colors.Verde) + 1))
+lista.inserirSemPrioridade(ListItem(Colors.Verde, lista.getLastCodeUsedByColor(Colors.Verde) + 1))
+lista.inserirComPrioridade(ListItem(Colors.Verde, lista.getLastCodeUsedByColor(Colors.Amarelo) + 1))
+lista.inserirSemPrioridade(ListItem(Colors.Verde, lista.getLastCodeUsedByColor(Colors.Verde) + 1))
+lista.inserirComPrioridade(ListItem(Colors.Verde, lista.getLastCodeUsedByColor(Colors.Amarelo) + 1))
+lista.inserirComPrioridade(ListItem(Colors.Verde, lista.getLastCodeUsedByColor(Colors.Amarelo) + 1))
+lista.inserirSemPrioridade(ListItem(Colors.Verde, lista.getLastCodeUsedByColor(Colors.Verde) + 1))
 
 
 # lista.inserirSemPrioridade(ListItem("A", 1))
-# lista.inserirSemPrioridade(ListItem(Color.V, 2))
-# lista.inserirSemPrioridade(ListItem(Color.V, 3))
-# lista.inserirSemPrioridade(ListItem(Color.V, 4))
-# lista.inserirSemPrioridade(ListItem(Color.V, 5))
-# lista.inserirComPrioridade(ListItem(Color.V, 201))
+# lista.inserirSemPrioridade(ListItem(Colors.Verde, 2))
+# lista.inserirSemPrioridade(ListItem(Colors.Verde, 3))
+# lista.inserirSemPrioridade(ListItem(Colors.Verde, 4))
+# lista.inserirSemPrioridade(ListItem(Colors.Verde, 5))
+# lista.inserirComPrioridade(ListItem(Colors.Verde, 201))
 
 print(lista)
