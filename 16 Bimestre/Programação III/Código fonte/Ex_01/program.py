@@ -1,7 +1,9 @@
-import Ajudas as a
-# from Ajudas import * 
-a.clear()
+from Ajudas import * 
 
+# Como sair do programa?
+# cd "C:\Users\Pichau\Universidade\16 Bimestre\Programação III\Código fonte\Ex_01" && py program.py
+
+# COPIAR DAQUI:
 
 from enum import Enum, auto
 
@@ -157,9 +159,9 @@ def showMainMenuAndGetOption():
     if(result > 4 or result <= 0):
         print("\nTENTE NOVAMENTE")
         return showMainMenuAndGetOption()
-    if(result == 4):
-        print("\n\nAdeus!")
-        exit
+    # if(result == 4):
+    #     print("\n\nAdeus!")
+    #     exit(0)
     
     return result
     
@@ -189,26 +191,38 @@ def inserir():
 
 def atender():
     atendido = lista.dequeue()
-    print(f"Atentido paciente: [{atendido.color.name.upper()} - {atendido.code}]")
+    print(f"Atendido paciente: [{atendido.color.name.upper()} - {atendido.code}]")
 
 
 
 def showAll():
     print(lista)
 
-# =============================
+# ============================= TODO (Isso preenche 10 itens rapidamente. 5 de cada. Remover)
 fill_list(lista)
 
 
 while True:
-    option = showMainMenuAndGetOption()
-    
-    if(option == 1):
-        inserir()
-    elif(option == 2):
-        showAll()
-    elif(option == 3):
-        atender()
+    try: 
+        option = showMainMenuAndGetOption()
+        
+        if(option == 1):
+            inserir()
+        elif(option == 2):
+            showAll()
+        elif(option == 3):
+            atender()
+        elif(option == 4):
+            print("Adeus!")
+            break
+    except KeyboardInterrupt:
+        print("Adeus!")
+        exit 
+    except InterruptedError:
+        print("Adeus!")
+        exit 
+    except:
+        print("Algo de errado aconteceu. Tente novamente.")
         
         
         
@@ -220,31 +234,31 @@ while True:
         
 
 
-""""
-1  - V
-2  - A
-3  - A
-4  - A
-5  - V
-6  - V
-7  - A
-8  - V
-9  - A
-10 - V
+# """"
+# 1  - V
+# 2  - A
+# 3  - A
+# 4  - A
+# 5  - V
+# 6  - V
+# 7  - A
+# 8  - V
+# 9  - A
+# 10 - V
 
-"""
-def fill_list(lista: SimpleList):
-    # 1:
-    lista.inserirSemPrioridade(ListItem(Colors.Verde, lista.getLastCodeUsedByColor(Colors.Verde) + 1))
-    lista.inserirComPrioridade(ListItem(Colors.Amarelo, lista.getLastCodeUsedByColor(Colors.Amarelo) + 1))
-    lista.inserirComPrioridade(ListItem(Colors.Amarelo, lista.getLastCodeUsedByColor(Colors.Amarelo) + 1))
-    # 4:
-    lista.inserirComPrioridade(ListItem(Colors.Amarelo, lista.getLastCodeUsedByColor(Colors.Amarelo) + 1))(ListItem(Colors.Verde, lista.getLastCodeUsedByColor(Colors.Verde) + 1))
-    lista.inserirSemPrioridade(ListItem(Colors.Verde, lista.getLastCodeUsedByColor(Colors.Verde) + 1))
-    # 6:
-    lista.inserirSemPrioridade(ListItem(Colors.Verde, lista.getLastCodeUsedByColor(Colors.Verde) + 1))
-    lista.inserirComPrioridade(ListItem(Colors.Amarelo, lista.getLastCodeUsedByColor(Colors.Amarelo) + 1))
-    # 8:
-    lista.inserirSemPrioridade(ListItem(Colors.Verde, lista.getLastCodeUsedByColor(Colors.Verde) + 1))
-    lista.inserirComPrioridade(ListItem(Colors.Amarelo, lista.getLastCodeUsedByColor(Colors.Amarelo) + 1))(ListItem(Colors.Verde, lista.getLastCodeUsedByColor(Colors.Verde) + 1))
-    lista.inserirSemPrioridade(ListItem(Colors.Verde, lista.getLastCodeUsedByColor(Colors.Verde) + 1))
+# """
+# def fill_list(lista: SimpleList):
+#     # 1:
+#     lista.inserirSemPrioridade(ListItem(Colors.Verde, lista.getLastCodeUsedByColor(Colors.Verde) + 1))
+#     lista.inserirComPrioridade(ListItem(Colors.Amarelo, lista.getLastCodeUsedByColor(Colors.Amarelo) + 1))
+#     lista.inserirComPrioridade(ListItem(Colors.Amarelo, lista.getLastCodeUsedByColor(Colors.Amarelo) + 1))
+#     # 4:
+#     lista.inserirComPrioridade(ListItem(Colors.Amarelo, lista.getLastCodeUsedByColor(Colors.Amarelo) + 1))(ListItem(Colors.Verde, lista.getLastCodeUsedByColor(Colors.Verde) + 1))
+#     lista.inserirSemPrioridade(ListItem(Colors.Verde, lista.getLastCodeUsedByColor(Colors.Verde) + 1))
+#     # 6:
+#     lista.inserirSemPrioridade(ListItem(Colors.Verde, lista.getLastCodeUsedByColor(Colors.Verde) + 1))
+#     lista.inserirComPrioridade(ListItem(Colors.Amarelo, lista.getLastCodeUsedByColor(Colors.Amarelo) + 1))
+#     # 8:
+#     lista.inserirSemPrioridade(ListItem(Colors.Verde, lista.getLastCodeUsedByColor(Colors.Verde) + 1))
+#     lista.inserirComPrioridade(ListItem(Colors.Amarelo, lista.getLastCodeUsedByColor(Colors.Amarelo) + 1))(ListItem(Colors.Verde, lista.getLastCodeUsedByColor(Colors.Verde) + 1))
+#     lista.inserirSemPrioridade(ListItem(Colors.Verde, lista.getLastCodeUsedByColor(Colors.Verde) + 1))
