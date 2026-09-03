@@ -8,11 +8,10 @@ class State:
        self.full_name = full_name
        self.next = None
        
-       
     def __repr__(self):
         # Facilitar ver o meu estado
         if(self.sigla.upper() == "VS"):
-            return f"\033[1;31;40m{self.sigla}\033[m"
+            return f"\033[1;34;40m{self.sigla}\033[m"
         
         return f"{self.sigla.upper()}"
        
@@ -27,7 +26,6 @@ class SimpleList:
         new_state.next = self.head
         self.head = new_state
         
-
     def __repr__(self):
         final_representation = ""
         
@@ -38,77 +36,79 @@ class SimpleList:
         
         return final_representation + "None"
     
+    
+class HashTable:
+    list: list[SimpleList] = [ ]
+    
+    def __init__(self):
+        for i in range(10):
+            self.list.append(SimpleList())
         
+    def funcaoHash(self, sigla):
+        sigla = sigla.upper()# padronizado
+        if sigla == "DF":
+            return 7
+        
+        char1Ascii = ord(sigla[0])
+        char2Ascii = ord(sigla[1])
+        
+        return (char1Ascii + char2Ascii) % 10
 
-def funcaoHash(sigla):
-    sigla = sigla.upper()# padronizado
-    if sigla == "DF":
-        return 7
-    
-    char1Ascii = ord(sigla[0])
-    char2Ascii = ord(sigla[1])
-    
-    return (char1Ascii + char2Ascii) % 10
+    def insertItem(self, sigla, full_name):
+        state = State(sigla, full_name)
+        hash = self.funcaoHash(sigla)
+        
+        self.list[hash].inserirInicio(state)
+
+    def printList(self):
+        count = 0
+        for listItem in self.list:
+            print(f"{count}: {listItem}")
+            count+=1
 
 
-full_list: list[SimpleList] = []
-for i in range(10):
-    full_list.append(SimpleList())
-
-
-def insertOnList(sigla, full_name):
-    state = State(sigla, full_name)
-    hash = funcaoHash(sigla)
-    
-    full_list[hash].inserirInicio(state)
-
-
-def printList(lista: list[SimpleList]):
-    count = 0
-    for listItem in lista:
-        print(f"{count}: {listItem}")
-        count+=1
+hashList = HashTable()
 
 
 # print vazio
-printList(full_list)
+hashList.printList()
 
 
 # Esperar
 input("\nAperte ENTER para seguir (adicionar estados)...")
 
 # Inserindo todos os estados
-insertOnList("AC", "Acre")
-insertOnList("AL", "Alagoas")
-insertOnList("AP", "Amapá")
-insertOnList("AM", "Amazonas")
-insertOnList("BA", "Bahia")
-insertOnList("CE", "Ceará")
-insertOnList("DF", "Distrito Federal")
-insertOnList("ES", "Espírito Santo")
-insertOnList("GO", "Goiás")
-insertOnList("MA", "Maranhão")
-insertOnList("MT", "Mato Grosso")
-insertOnList("MS", "Mato Grosso do Sul")
-insertOnList("MG", "Minas Gerais")
-insertOnList("PA", "Pará")
-insertOnList("PB", "Paraíba")
-insertOnList("PR", "Paraná")
-insertOnList("PE", "Pernambuco")
-insertOnList("PI", "Piauí")
-insertOnList("RJ", "Rio de Janeiro")
-insertOnList("RN", "Rio Grande do Norte")
-insertOnList("RS", "Rio Grande do Sul")
-insertOnList("RO", "Rondônia")
-insertOnList("RR", "Roraima")
-insertOnList("SC", "Santa Catarina")
-insertOnList("SP", "São Paulo")
-insertOnList("SE", "Sergipe")
-insertOnList("TO", "Tocantins")
+hashList.insertItem("AC", "Acre")
+hashList.insertItem("AL", "Alagoas")
+hashList.insertItem("AP", "Amapá")
+hashList.insertItem("AM", "Amazonas")
+hashList.insertItem("BA", "Bahia")
+hashList.insertItem("CE", "Ceará")
+hashList.insertItem("DF", "Distrito Federal")
+hashList.insertItem("ES", "Espírito Santo")
+hashList.insertItem("GO", "Goiás")
+hashList.insertItem("MA", "Maranhão")
+hashList.insertItem("MT", "Mato Grosso")
+hashList.insertItem("MS", "Mato Grosso do Sul")
+hashList.insertItem("MG", "Minas Gerais")
+hashList.insertItem("PA", "Pará")
+hashList.insertItem("PB", "Paraíba")
+hashList.insertItem("PR", "Paraná")
+hashList.insertItem("PE", "Pernambuco")
+hashList.insertItem("PI", "Piauí")
+hashList.insertItem("RJ", "Rio de Janeiro")
+hashList.insertItem("RN", "Rio Grande do Norte")
+hashList.insertItem("RS", "Rio Grande do Sul")
+hashList.insertItem("RO", "Rondônia")
+hashList.insertItem("RR", "Roraima")
+hashList.insertItem("SC", "Santa Catarina")
+hashList.insertItem("SP", "São Paulo")
+hashList.insertItem("SE", "Sergipe")
+hashList.insertItem("TO", "Tocantins")
 
 
 print("\nApós inserir tudo:")
-printList(full_list)
+hashList.printList()
 
 
 # Esperar
@@ -116,7 +116,7 @@ input("\nAperte ENTER para seguir (inserir meu estado)...")
 
 
 
-insertOnList("VS", "Victor Spichenkoff Santana")
+hashList.insertItem("VS", "Victor Spichenkoff Santana")
 
 print("\nApós inserir meu estado:")
-printList(full_list)
+hashList.printList()
