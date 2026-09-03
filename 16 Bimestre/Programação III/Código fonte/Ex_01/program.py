@@ -1,5 +1,6 @@
 from Ajudas import * 
 
+clear()
 # Como sair do programa?
 # cd "C:\Users\Pichau\Universidade\16 Bimestre\Programação III\Código fonte\Ex_01" && py program.py
 
