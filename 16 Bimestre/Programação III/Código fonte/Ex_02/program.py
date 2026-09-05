@@ -2,6 +2,9 @@ from Ajudas import *
 clear()
 
 
+# COPIAR A PARTIR DAQUI
+
+
 class State:
     def __init__(self, sigla, full_name):
        self.sigla = sigla
@@ -16,7 +19,7 @@ class State:
         return f"{self.sigla.upper()}"
        
        
-class SimpleList:
+class LinkedList:
     head: State
     
     def __init__(self):
@@ -38,11 +41,11 @@ class SimpleList:
     
     
 class HashTable:
-    list: list[SimpleList] = [ ]
+    list: list[LinkedList] = [ ]
     
     def __init__(self):
         for i in range(10):
-            self.list.append(SimpleList())
+            self.list.append(LinkedList())
         
     def funcaoHash(self, sigla):
         sigla = sigla.upper()# padronizado
@@ -53,7 +56,7 @@ class HashTable:
         char2Ascii = ord(sigla[1])
         
         return (char1Ascii + char2Ascii) % 10
-
+    
     def insertItem(self, sigla, full_name):
         state = State(sigla, full_name)
         hash = self.funcaoHash(sigla)
@@ -115,8 +118,8 @@ hashList.printList()
 input("\nAperte ENTER para seguir (inserir meu estado)...")
 
 
-
 hashList.insertItem("VS", "Victor Spichenkoff Santana")
+
 
 print("\nApós inserir meu estado:")
 hashList.printList()

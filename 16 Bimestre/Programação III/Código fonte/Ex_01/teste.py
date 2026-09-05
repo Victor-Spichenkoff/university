@@ -3,7 +3,7 @@ from program import *
 
 
 
-lista = SimpleList()
+lista = LinkedList()
 
 
 

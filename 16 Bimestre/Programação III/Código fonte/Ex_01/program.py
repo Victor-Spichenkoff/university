@@ -17,12 +17,6 @@ class Colors(Enum):
     Verde = auto()
     
 
-
-# showMainMenuAndGetOption()
-
-
-
-
 ##############################################
 # LISTAS    
 ##############################################
@@ -38,8 +32,7 @@ class ListItem:
         return f"[{self.color}, {self.code}]"
        
        
-class SimpleList:
-
+class LinkedList:
     def __init__(self):
         self.head = None
         
@@ -48,7 +41,7 @@ class SimpleList:
     def inserirSemPrioridade(self, nodo: ListItem):
         if(nodo.code > 200):
             return print("Itens sem prioridade não podem ter código menor que 200.")
-        nodo.color = Colors.Verde
+        nodo.color = Colors.Verde # garantia
               
         if (self.head is None):
             self.head = nodo
@@ -82,7 +75,7 @@ class SimpleList:
             return
         
         while True:
-            # Sem verdes, mas é o último. Adiciona no final simplesmente        
+            # Sem verdes, mas é o último. Adiciona no final simplesmente
             if (next is None):
                 current.next = nodo
                 return
@@ -98,8 +91,6 @@ class SimpleList:
             next = current.next
         
     
-    
-    # SUPORTE (apenas facilitam)
     def getLastCodeUsedByColor(self, targetColor: Colors):
         base = 0 if targetColor is Colors.Verde else 200
 
@@ -118,6 +109,7 @@ class SimpleList:
             while current.next is not None and current.next.color is targetColor:
                 current = current.next
             return current.code
+    
     
     def dequeue(self):
         if self.head is None:
@@ -143,7 +135,7 @@ class SimpleList:
     
         
 
-lista = SimpleList()
+lista = LinkedList()
 
 
 
@@ -151,7 +143,7 @@ lista = SimpleList()
 # MENUS
 ##############################################
 def showMainMenuAndGetOption():
-    print("=========================")
+    print("\033[1;31m=========================\033[m")
     print("[ 1 ] Adicionar paciente a fila")
     print("[ 2 ] Mostrar TODOS pacientes na fila")
     print("[ 3 ] Chamar próximo paciente")
@@ -171,7 +163,6 @@ def showMainMenuAndGetOption():
 # Retorna apenas "V" ou "A" (UPPER)
 def showAddMenuAndGetOption():
     while True:
-        print("=========================")
         result = input("Qual a cor [A/V]? ").upper()[0]
 
         if(result == "V" or result == "A"):
@@ -192,13 +183,13 @@ def inserir():
     print(f"Adicionado paciente: {newPatient.color.name.upper()} - {newPatient.code}")
 
 
-def atender():
+def atenderPaciente():
     atendido = lista.dequeue()
     print(f"Atendido paciente: [{atendido.color.name.upper()} - {atendido.code}]")
 
 
 
-def showAll():
+def imprimirListaEspera():
     print(lista)
 
 # ============================= TODO (Isso preenche 10 itens rapidamente. 5 de cada. Remover)
@@ -212,9 +203,9 @@ while True:
         if(option == 1):
             inserir()
         elif(option == 2):
-            showAll()
+            imprimirListaEspera()
         elif(option == 3):
-            atender()
+            atenderPaciente()
     except SystemExit:
         raise
     except Exception as e:

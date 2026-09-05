@@ -11,15 +11,15 @@ def clear():
 
 """"
 1  - V
-2  - A
-3  - A
-4  - A
-5  - V
+2  - V
+3  - V
+4  - a
+5  - a
 6  - V
-7  - A
-8  - V
-9  - A
-10 - V
+7  - v
+8  - a
+9  - a
+10 - a
 
 """
 def fill_list(lista):
@@ -27,15 +27,15 @@ def fill_list(lista):
     
     # 1:
     lista.inserirSemPrioridade(p.ListItem(p.Colors.Verde, lista.getLastCodeUsedByColor(p.Colors.Verde) + 1))
-    lista.inserirComPrioridade(p.ListItem(p.Colors.Amarelo, lista.getLastCodeUsedByColor(p.Colors.Amarelo) + 1))
-    lista.inserirComPrioridade(p.ListItem(p.Colors.Amarelo, lista.getLastCodeUsedByColor(p.Colors.Amarelo) + 1))
+    lista.inserirSemPrioridade(p.ListItem(p.Colors.Verde, lista.getLastCodeUsedByColor(p.Colors.Verde) + 1))
+    lista.inserirSemPrioridade(p.ListItem(p.Colors.Verde, lista.getLastCodeUsedByColor(p.Colors.Verde) + 1))
     # 4:
     lista.inserirComPrioridade(p.ListItem(p.Colors.Amarelo, lista.getLastCodeUsedByColor(p.Colors.Amarelo) + 1))
-    lista.inserirSemPrioridade(p.ListItem(p.Colors.Verde, lista.getLastCodeUsedByColor(p.Colors.Verde) + 1))
+    lista.inserirComPrioridade(p.ListItem(p.Colors.Amarelo, lista.getLastCodeUsedByColor(p.Colors.Amarelo) + 1))
     # 6:
     lista.inserirSemPrioridade(p.ListItem(p.Colors.Verde, lista.getLastCodeUsedByColor(p.Colors.Verde) + 1))
-    lista.inserirComPrioridade(p.ListItem(p.Colors.Amarelo, lista.getLastCodeUsedByColor(p.Colors.Amarelo) + 1))
+    lista.inserirSemPrioridade(p.ListItem(p.Colors.Verde, lista.getLastCodeUsedByColor(p.Colors.Verde) + 1))
     # 8:
-    lista.inserirSemPrioridade(p.ListItem(p.Colors.Verde, lista.getLastCodeUsedByColor(p.Colors.Verde) + 1))
     lista.inserirComPrioridade(p.ListItem(p.Colors.Amarelo, lista.getLastCodeUsedByColor(p.Colors.Amarelo) + 1))
-    lista.inserirSemPrioridade(p.ListItem(p.Colors.Verde, lista.getLastCodeUsedByColor(p.Colors.Verde) + 1))
+    lista.inserirComPrioridade(p.ListItem(p.Colors.Amarelo, lista.getLastCodeUsedByColor(p.Colors.Amarelo) + 1))
+    lista.inserirComPrioridade(p.ListItem(p.Colors.Amarelo, lista.getLastCodeUsedByColor(p.Colors.Amarelo) + 1))
