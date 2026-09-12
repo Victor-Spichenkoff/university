@@ -1,10 +1,6 @@
-from Ajudas import * 
+# cd "C:\Users\Pichau\Universidade\16 Bimestre\Programação III\Código fonte\Ex_01" && py simular_prof.py
 
-clear()
-# Como sair do programa?
-# cd "C:\Users\Pichau\Universidade\16 Bimestre\Programação III\Código fonte\Ex_01" && py program.py
 
-# COPIAR DAQUI:
 
 from enum import Enum, auto
 
@@ -191,9 +187,6 @@ def atenderPaciente():
 
 def imprimirListaEspera():
     print(lista)
-
-# ============================= TODO (Isso preenche 10 itens rapidamente. 5 de cada. Remover)
-fill_list(lista)
 
 
 while True:
