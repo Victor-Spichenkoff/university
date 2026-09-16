@@ -1,9 +1,4 @@
-# cd "C:\Users\Pichau\Universidade\16 Bimestre\Programação III\Código fonte\Ex_01" && py simular_prof.py
-
-
-
 from enum import Enum, auto
-
 
 ##############################################
 # AJUDAS
@@ -21,7 +16,7 @@ class ListItem:
     def __init__(self, color: Colors, code):
        self.color: Colors = color
        self.code = code
-       self.next = None
+       self.next = None#ultimo elemente sempre aponta para None
        
        
     def __repr__(self):
@@ -36,7 +31,7 @@ class LinkedList:
     # Sempre no final (V)
     def inserirSemPrioridade(self, nodo: ListItem):
         if(nodo.code > 200):
-            return print("Itens sem prioridade não podem ter código menor que 200.")
+            return print("Itens SEM prioridade não podem ter código maior que 200.")
         nodo.color = Colors.Verde # garantia
               
         if (self.head is None):
@@ -54,7 +49,7 @@ class LinkedList:
     
     def inserirComPrioridade(self, nodo: ListItem):
         if(nodo.code < 201):
-            return print("Itens COM prioridade não podem ter código maior que 201.")
+            return print("Itens COM prioridade não podem ter código menor que 201.")
         nodo.color = Colors.Amarelo
                 
         if (self.head is None):
@@ -133,8 +128,6 @@ class LinkedList:
 
 lista = LinkedList()
 
-
-
 ##############################################
 # MENUS
 ##############################################
@@ -178,16 +171,12 @@ def inserir():
      
     print(f"Adicionado paciente: {newPatient.color.name.upper()} - {newPatient.code}")
 
-
 def atenderPaciente():
     atendido = lista.dequeue()
     print(f"Atendido paciente: [{atendido.color.name.upper()} - {atendido.code}]")
 
-
-
 def imprimirListaEspera():
     print(lista)
-
 
 while True:
     try: 
