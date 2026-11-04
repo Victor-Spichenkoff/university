@@ -1,4 +1,3 @@
-
 class State:
     def __init__(self, sigla, full_name):
        self.sigla = sigla
@@ -35,11 +34,11 @@ class LinkedList:
     
     
 class HashTable:
-    list: list[LinkedList] = [ ]
-    
     def __init__(self):
+        self.list: list[LinkedList] = []
         for i in range(10):
             self.list.append(LinkedList())
+            
         
     def funcaoHash(self, sigla):
         sigla = sigla.upper()# padronizado

@@ -192,3 +192,4 @@ while True:
         raise
     except Exception as e:
         print(f"Erro inesperado: {e}. Tente novamente.")
+
